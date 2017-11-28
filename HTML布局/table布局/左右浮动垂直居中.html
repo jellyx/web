@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多行文字居中</title>
+	<style>
+	p{margin: 0;padding: 0;	}
+	.box{
+		width: 500px;height: 100px;display: table-cell;
+		vertical-align: middle;background-color: #8235bd;
+		text-align: center;
+	}
+	.box-in{
+		clear: both;height: 72px;	display: inline-block;
+		width: 400px;
+	}
+	.box-float{
+		height: 70px;line-height: 70px;width: 180px;
+		text-align: center;color: #fff;font-size: 24px;
+		border: 1px solid #fff;
+	}
+	.box-left{
+		float: left;
+	}
+	.box-right{
+		float: right;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box-in">
+			<div class="box-left box-float">左</div>
+			<div class="box-right box-float">右</div>
+		</div>
+	</div>
+</body>
+</html>

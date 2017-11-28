@@ -1,0 +1,66 @@
+html,body {
+	margin: 0;
+	padding: 0;
+}
+
+nav {
+	height: 100vh;
+	width: 150px;
+	position: fixed;
+	left:0;
+	top:50px;
+	border-radius: 10px;
+	background: black;
+	opacity: .5;
+	text-align:center;
+}
+
+nav ul {
+	position: relative;
+	padding: 0;
+}
+
+nav ul li {
+	position: relative;
+}
+
+nav ul li a{
+	display: block;
+	width: 150px;
+	margin: 50px auto;
+	text-decoration:none;
+    font-family:"微软雅黑";
+	font-size: 24px;
+}
+
+nav ul ul {               /*后代选择器搞定所有次级菜单*/
+	display: none;
+	width:100%;
+    background:black;
+    border-radius:10px;
+    position:absolute;
+    left: 100%;
+	top: -20px;
+    padding:0;
+}
+
+nav ul ul li a {
+	margin: 20px auto;
+    color: white;
+} 
+
+nav ul li:hover > ul {  /* >是子元素选择器 空格是后代选择器*/
+    display:block;      /*子元素选择器只选一层，后代选择器选所有后代*/
+}
+
+nav ul li:hover > a {   /*这里先用后代选择器选择所有li，然后让每个li拥有子元素选择器*/
+	color: red;         /*这样就能一次性解决所有次级菜单栏的隐藏显现*/
+}
+
+a {
+	color: white;       /*a不能继承color*/
+} 
+
+ul {list-style:none;}   /*去列表前的点*/
+
+

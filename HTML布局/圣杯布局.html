@@ -1,0 +1,54 @@
+<html>
+<head>
+<style>
+body{
+	text-align: center;
+}
+#hd, #ft{
+	display:block;
+	margin:auto;
+	background-color: gray;
+}
+#bd{
+    padding:0 210px;
+}
+#aside1{
+    float:left;
+    position:relative;
+    left:-210px;
+    width:200px;
+    margin-left:-100%;
+	background-color:red;
+}
+#main{
+    float:left;
+    width:100%;
+	background-color:red;
+}
+#aside2{
+	float:right;
+	position:relative;
+	right:-210px;
+	width:200px;
+	margin-left:-100%;
+	background-color:red;
+}
+ #hd:after, #bd:after, #ft:after{
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    content: '';
+}
+</style>
+</head>
+<body>
+<header id="hd">头部</header>
+<div id="bd">
+    <div id="main">主内容栏自适应宽度</div>
+    <aside id="aside1">侧边栏固定宽度</aside>
+	<aside id="aside2">侧边栏固定宽度</aside>
+</div>
+<footer id="ft">底部</footer>
+</body>
+</html>

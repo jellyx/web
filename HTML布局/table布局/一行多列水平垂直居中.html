@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多行文字居中</title>
+	<style>
+	.box{
+		margin: 20px;
+	}
+	.box-in{
+		display:table-cell;
+		vertical-align:middle;
+		height:100px;
+		width:400px;
+		border:1px solid #f20;
+		text-align:center;
+	}
+	.item{
+		width: 100px;
+		height:60px;
+		border:1px solid #fff;
+		color:red;
+		display:inline-block;
+		line-height: 60px;
+		background: black;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box-in">
+			<div class="item">我是item1</div>
+			<div class="item">我是item2</div>
+			<div class="item">我是item3</div>
+		</div>
+	</div>
+	<div class="box">
+		<div class="box-in">
+			<div class="item">我是item1</div>
+			<div class="item">我是item2</div>
+		</div>
+	</div>
+</body>
+</html>

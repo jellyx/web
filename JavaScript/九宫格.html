@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>九宫格</title>
+
+<script type="text/javascript">
+//获取RGB随机颜色
+function rgbColor() {
+ var r = Math.floor(Math.random() * 256);
+ var g = Math.floor(Math.random() * 256);
+ var b = Math.floor(Math.random() * 256);
+ return "rgb("+r+","+g+","+b+")";; //返回rgb(r,g,b)格式颜色
+}
+
+//获取3个随机格子
+function cell() {
+var arr = [];
+while(arr.length < 3){
+    var bFlag = true;
+    var number = Math.floor(Math.random()*10);
+    if(arr.length == 0){
+        arr.push(number);
+    }
+    for(var i=0;i<arr.length;i++){
+        if(number == arr[i]){
+            bFlag = false;
+        }
+    }
+    if(bFlag){    //这个true false用的好啊
+       arr.push(number);
+    }
+}
+return arr;
+}
+
+//修改格子颜色
+function changeStyle() {
+  var newArr=cell();
+  for (var i=0;i<newArr.length;i++){
+    document.getElementById(newArr[i]).style.background=rgbColor();
+  }
+}
+
+//清除样式
+function clearStyle() {
+  var dom = document.getElementsByTagName('div');//原生js只有id最方便，其他都要这样
+  for(var i=0,len=dom.length; i<len; i++){
+    dom[i].style.background = 'orange';
+  }
+}
+
+//定时器
+function op1() {
+  var show=clearStyle();//先change后clear的话停止后没有样式，所以先clear后change
+  var p=setTimeout("changeStyle()",10);
+}
+var q;
+function op2() {
+  q=setInterval("op1()",500);
+}
+function ed() {
+  clearInterval(q);
+}
+
+</script>
+
+<style type="text/css">
+html {
+width:100%;
+font-size:16px;
+}
+body {
+padding:0;
+margin:1rem 0;
+width:100%;
+font-size:0;
+text-align:center;
+}
+div {
+display: inline-block;
+background: orange;
+width: 31%;
+margin: 1%;
+border: .05rem solid white;
+border-radius: 2rem;
+position: relative;
+vertical-align: middle;
+}
+div:before{
+content:"";
+display: inline-block;
+width: .1px;
+padding-bottom: 100%;
+vertical-align: middle;
+}
+
+button {
+width: 100%;
+display:block;
+background: white;
+margin: .8rem auto;
+border: 0.1rem solid orange;
+border-radius: 1.5rem;
+vertical-align: middle;
+font-size: 4rem;
+letter-spacing: .8rem;
+color: orange;
+cursor: pointer;
+}
+
+button:before{
+content:"";
+display: inline-block;
+width: .1px;
+padding-bottom: 10%;
+vertical-align: middle;
+}
+
+button:hover {
+background: orange;
+color: white;
+}
+</style>
+
+</head>
+
+<body>
+  <div id="1"></div>
+  <div id="2"></div>
+  <div id="3"></div>
+  <div id="4"></div>
+  <div id="5"></div>
+  <div id="6"></div>
+  <div id="7"></div>
+  <div id="8"></div>
+  <div id="9"></div>
+  <button onclick="op2()">开始闪</button>
+  <button onclick="ed()">停止闪</button>
+</body>
+
+</html>
