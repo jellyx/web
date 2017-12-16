@@ -1,0 +1,40 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+div{
+    position: relative;
+}
+div>div{
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin: 100px;
+    overflow: hidden;
+}
+#min{
+	display: block;
+    width: 300px;
+}
+#maxBox{
+    display: none;
+    
+}
+#max{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+    width: 1500px;
+}
+#mousebg{
+	display: none;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	background-color: rgba(255,255,255,.7);
+	top: 0;
+	left: 0;
+}
+
